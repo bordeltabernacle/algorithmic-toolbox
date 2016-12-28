@@ -18,7 +18,7 @@ func TestMaxPairProd(t *testing.T) {
 	for _, test := range testCases {
 		actual := MaxPairwiseProduct(test.input)
 		if actual != test.expected {
-			t.Errorf("Max Pairwise Product test with %v\n\texpected: %d\n\t  actual: %d", test.input, test.expected, actual)
+			t.Errorf("Max Pairwise Product test with: %v\n\texpected: %d\n\t  actual: %d", test.input, test.expected, actual)
 		}
 	}
 

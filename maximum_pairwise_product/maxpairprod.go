@@ -1,11 +1,5 @@
 package main
 
-import "fmt"
-
-func main() {
-	fmt.Println(MaxPairwiseProduct([]int{4, 6, 2, 6, 1}))
-}
-
 // MaxPairwiseProduct finds the maximum pairwise product given a sequence of
 // non-negative integers, that is, the largest integer that can be obtained by
 // multiplying two different elements from the sequence.
