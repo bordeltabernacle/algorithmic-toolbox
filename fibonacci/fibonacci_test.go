@@ -6,14 +6,14 @@ type testCase struct {
 	input, expected int
 }
 
-var testCases = []testCase{
+var fibLastDigitTestCases = []testCase{
 	{3, 2},
 	{331, 9},
 	{327305, 5},
 }
 
-func TestMaxPairProd(t *testing.T) {
-	for _, test := range testCases {
+func TestFibLastDigit(t *testing.T) {
+	for _, test := range fibLastDigitTestCases {
 		actual := FibLastDigit(test.input)
 		if actual != test.expected {
 			t.Errorf("Max Pairwise Product test with: %d\n\texpected: %d\n\t  actual: %d", test.input, test.expected, actual)

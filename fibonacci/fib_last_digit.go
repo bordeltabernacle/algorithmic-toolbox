@@ -1,15 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/big"
+)
 
 func main() {
-	fmt.Println(FibLastDigit(10))
+	fmt.Println(FibLastDigit(331))
 
 }
 
 // FibLastDigit returns the last digit of the nth Fibonacci number
 func FibLastDigit(n int) int {
-	for a, b := 0, 1; a < n; a, b = a+b, a {
+	if n <= 1 {
+		return n
 	}
-	return 0
+	prev := big.NewInt(0)
+	curr := big.NewInt(1)
+	for i := 0; i < n-1; i++ {
+		prev.Add(prev, curr)
+		prev, curr = curr, prev
+	}
+	last := curr.Mod(curr, big.NewInt(10))
+	return int(last.Int64())
 }
