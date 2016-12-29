@@ -2,7 +2,7 @@ package main
 
 import "math/big"
 
-// HugeFibMod returns the last digit of the nth Fibonacci number
+// HugeFibMod returns the nth Fibonacci number modulo m
 func HugeFibMod(n, m int) int {
 	if n <= 1 {
 		return n
@@ -13,14 +13,6 @@ func HugeFibMod(n, m int) int {
 		prev.Add(prev, curr)
 		prev, curr = curr, prev
 	}
-	mod := rem(curr, big.NewInt(int64(m)))
+	mod := curr.Mod(curr, big.NewInt(int64(m)))
 	return int(mod.Int64())
-}
-
-func rem(n, m *big.Int) *big.Int {
-	r := big.NewInt(0)
-	r.Div(n, m)
-	r.Mul(r, m)
-	r.Sub(n, r)
-	return r
 }
