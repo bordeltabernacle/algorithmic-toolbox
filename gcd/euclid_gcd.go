@@ -1,7 +1,7 @@
 package main
 
 // EuclidGCD computes the greatest common divisor of two non-negative integers
-func EuclidGCD(a int, b int) int {
+func EuclidGCD(a, b int) int {
 	if b == 0 {
 		return a
 	}
