@@ -1,14 +1,6 @@
 package main
 
-import (
-	"fmt"
-	"math/big"
-)
-
-func main() {
-	fmt.Println(FibLastDigit(331))
-
-}
+import "math/big"
 
 // FibLastDigit returns the last digit of the nth Fibonacci number
 func FibLastDigit(n int) int {
